@@ -15,7 +15,7 @@ const client = new Arcane(
 bot.on("ready", () => console.log(bot.user.tag + " online !"));
 bot.login(""); // BOT_TOKEN
 
-client.on("ready", () => console.log("Client is started !"))
+client.on("ready", () => console.log("Client is started !"));
 client.on("post", () => client.update(bot.guilds.size, bot.options.shardCount));
 client.on("update", () => console.log("Stats updated !"));
 client.on("error", (log) => console.log('\n' + log.error + '\n')); // <= ⚠ This event must be used ⚠
