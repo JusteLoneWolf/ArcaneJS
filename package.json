@@ -1,0 +1,20 @@
+{
+  "name": "arcanejs",
+  "version": "1.0.0",
+  "description": "The unofficial module for the arcane-botcenter.xyz's API coded with ♥",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "arcane",
+    "botcenter",
+    "api",
+    "javascript"
+  ],
+  "author": "Sworder71",
+  "license": "MIT"
+}
