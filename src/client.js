@@ -12,10 +12,10 @@ class Client extends EventEmitter
         this._isRunning = false;
         this._logger = Boolean(options.logger);
         this._logs = [];
-        setTimeout(() => { this.start(); }, 1000);
+        setTimeout(() => { this._start(); }, 1000);
     }
 
-    start()
+    _start()
     {
         if (!this._isRunning)
         {
