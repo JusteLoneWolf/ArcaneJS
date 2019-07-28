@@ -6,16 +6,16 @@ class Client extends EventEmitter
     constructor(id, token, options)
     {
         super();
-        this._bot = { _id: id, _token: token, _serverCount: (options.server_count ? options.server_count : null), _shardCount: (options.shard_count ? options.shard_count : null) };
+        this._bot = { _id: id, _token: token, _serverCount: (options.server_count ? options.server_count : null), _shardCount: (options.shard_count ? options.shard_count : null), _memberCount: (options.member_count ? options.member_count : null) };
         this._interval = null;
         this._timer = ((options.interval && options.interval >= 60000) ? options.interval : 60000);
         this._isRunning = false;
         this._logger = Boolean(options.logger);
         this._logs = [];
-        setTimeout(() => { this._start(); }, 1000);
+        setTimeout(() => { this.start(); }, 1000);
     }
 
-    _start()
+    start()
     {
         if (!this._isRunning)
         {
@@ -32,16 +32,17 @@ class Client extends EventEmitter
         }
     }
 
-    update(serverCount, shardCount)
+    update(serverCount, shardCount, memberCount)
     {
         this._bot._serverCount = (serverCount ? serverCount : null);
         this._bot._shardCount = (shardCount ? shardCount : null);
+        this._bot._memberCount = (memberCount ? memberCount : null);
         this.emit("update");
     }
     
     _postStats()
     {
-        const data = JSON.stringify({ server_count: this._bot._serverCount, shard_count: this._bot._shardCount });
+        const data = JSON.stringify({ server_count: this._bot._serverCount, shard_count: this._bot._shardCount, member_count: this._bot._memberCount });
         const options = { hostname: "arcane-botcenter.xyz", port: 443, path: "/api/" + this._bot._id + "/stats", method: "POST", headers: { 'Authorization': this._bot._token, "Content-Type": "application/json", "Content-Length": data.length } };
 
         let log = { status: null, data: data, error: null, timestamp: null };
