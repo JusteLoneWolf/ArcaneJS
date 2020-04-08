@@ -59,12 +59,12 @@ class Client extends EventEmitter
     
                 if (this._logger && !log.error)
                 {
-                    console.log("[\x1b[32mSuccess\x1b[0m] Stats posted to \x1b[36mhttps://arcane-botcenter.xyz/api/" + this._bot._id + "/stats\x1b[0m !");
+                    console.log("[\x1b[32mSuccess\x1b[0m] Stats posted to \x1b[36mhttps://arcane-center.xyz/api/" + this._bot._id + "/stats\x1b[0m !");
                     this.emit("post");
                 }
                 else if (this._logger && log.error)
                 {
-                    console.log("[\x1b[31mError\x1b[0m] An error has occurred while updating stats on \x1b[36mhttps://arcane-botcenter.xyz/api/" + this._bot._id + "/stats\x1b[0m !");
+                    console.log("[\x1b[31mError\x1b[0m] An error has occurred while updating stats on \x1b[36mhttps://arcane-center.xyz/api/" + this._bot._id + "/stats\x1b[0m !");
                     this.emit("error", log);
                 }
                 else if (log.error)
