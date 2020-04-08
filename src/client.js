@@ -43,7 +43,7 @@ class Client extends EventEmitter
     _postStats()
     {
         const data = JSON.stringify({ server_count: this._bot._serverCount, shard_count: this._bot._shardCount, member_count: this._bot._memberCount });
-        const options = { hostname: "arcane-botcenter.xyz", port: 443, path: "/api/" + this._bot._id + "/stats", method: "POST", headers: { 'Authorization': this._bot._token, "Content-Type": "application/json", "Content-Length": data.length } };
+        const options = { hostname: "arcane-center.xyz", port: 443, path: "/api/" + this._bot._id + "/stats", method: "POST", headers: { 'Authorization': this._bot._token, "Content-Type": "application/json", "Content-Length": data.length } };
 
         let log = { status: null, data: data, error: null, timestamp: null };
 
