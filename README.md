@@ -1,5 +1,5 @@
 # ArcaneJS
-*“ The unofficial module for the [arcane-botcenter.xyz](arcane-botcenter.xyz)'s API coded with ♥ ” - Sworder*
+*“ The unofficial module for the [arcane-center.xyz](arcane-center.xyz)'s API coded with ♥ ” - Sworder*
  - Easy to use
  - Usage with Events
  - Interval and logger included
